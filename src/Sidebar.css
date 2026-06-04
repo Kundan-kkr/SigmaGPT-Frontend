@@ -1,0 +1,252 @@
+/* Sidebar.css */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.sidebar {
+  width: 280px;
+  min-width: 280px;
+  max-width: 280px;  
+  height: 100%;      
+  background-color: #171717;
+  border-right: 1px solid #2f2f2f;
+  display: flex;
+  flex-direction: column;
+  font-family: "Inter", sans-serif;
+  overflow: hidden;
+  flex-shrink: 0;     
+}
+
+/* Top */
+.sidebar-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 12px;
+}
+
+/* Logo Button */
+.sidebar-logo {
+  width: 38px;
+  height: 38px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
+  background-color: #171717;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.sidebar-logo:hover {
+  background-color: #2a2a2a;
+  border-radius: 8px;
+}
+
+
+/* Icon Size */
+.sidebar-logo img.side {
+  width: 22px;
+  height: 22px;
+  object-fit: contain;
+  margin-left: 1px;
+  filter: brightness(0) invert(1);
+  
+}
+
+.sidebar-logo img.chatgpt {
+  width: 40px !important;
+  height: 32px !important;
+  object-fit: contain;
+  mix-blend-mode: lighten;
+  filter: brightness(100%) invert(110%);
+}
+
+/* Menu Buttons */
+.sidebar-section {
+  padding: 0 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.menu-btn {
+  width: 100%;
+  border: none;
+  outline: none;
+  background: transparent;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 12px 14px;
+  border-radius: 12px;
+  font-size: 15px;
+  font-weight: 500;
+  padding-left: 3px;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.menu-btn:hover {
+  background-color: #2a2a2a;
+}
+
+.menu-btn i {
+  font-size: 17px;
+  color: #ececec;
+  padding-left: 10px;
+}
+
+/* Recent */
+.recent-section {
+  flex: 1;
+  overflow-y: auto;
+  margin-top: 20px;
+  padding: 0 10px 10px;
+  min-height: 0;
+}
+
+/* Scrollbar */
+.recent-section::-webkit-scrollbar {
+  width: 6px;
+}
+
+.recent-section::-webkit-scrollbar-thumb {
+  background: #3a3a3a;
+  border-radius: 10px;
+}
+
+.recent-section::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.recent-title {
+  font-size: 16px;
+  font-weight: 600;
+  color: #ececec;
+  letter-spacing: auto;
+  font-family: "Inter", sans-serif;
+  margin-bottom: 10px;
+  padding-left: 12px;
+}
+
+/* Chat List */
+.chat-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  margin-left: auto;
+}
+
+.chat-item {
+  width: 100%;
+  border: none;
+  outline: none;
+  background: transparent;
+  color: #ececec;
+  text-align: left;
+  padding: 12px 14px;
+  border-radius: 12px;
+  font-size: 15px;
+  font-weight: 500;
+  cursor: pointer;
+ 
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  transition: 0.2s ease;
+}
+
+.chat-item:hover {
+  background-color: #2a2a2a;
+}
+
+.chat-title {
+  flex: 1;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Delete Button*/
+.trash-wrapper {
+  position: absolute;
+  right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0; 
+  transition: opacity 0.2s ease;
+  padding: 4px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+/* Row (.chat-item) trash icon smoothly fade-in  */
+.chat-item:hover .trash-wrapper {
+  opacity: 1; 
+}
+
+/* Inside FontAwesome Trash Icon default color */
+.fa-trash-can {
+  color: #9aa0a6; 
+  font-size: 14px;
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+
+/* specific trash red color alert */
+.trash-wrapper:hover .fa-trash-can {
+  color: #f87171 !important; 
+  transform: scale(1.15); /* Small smooth premium zoom */
+}
+
+/* Highlight history title*/
+.highlighted {
+    background-color: #2a2a2a;
+}
+
+/* Bottom */
+.sidebar-footer-brand {
+  padding: 16px 20px;
+  border-top: 1px solid #2a2a2a;
+  flex-shrink: 0;
+}
+
+.developer-credit {
+  font-size: 13px;
+  color: rgb(189, 187, 206);
+  text-align: center;
+  font-weight: 500;
+}
+
+
+/* Responsive Design for Mobile */
+.mobile-menu{
+  display:none;
+}
+
+@media (max-width:768px){
+
+  .sidebar{
+    position:fixed;
+    top:0;
+    left:-280px;
+    width:280px;
+    height:100vh;
+    z-index:2000;
+    transition: left 0.3s ease;
+    background: #171717;
+  }
+
+  .sidebar.active{
+    left:0;
+  }
+
+  
+}
