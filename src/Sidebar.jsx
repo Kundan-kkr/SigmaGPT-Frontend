@@ -1,6 +1,6 @@
 import "./Sidebar.css";
 import logo from "./assets/chatgpt-icon.svg";
-import sidebar from "./assets/sidebarr.svg";
+import sidebar from "./assets/Sidebarr.svg";
 import { useContext, useEffect } from "react";
 import { MyContext } from "./MyContext.jsx";
 import {v1 as uuidv1} from "uuid";
