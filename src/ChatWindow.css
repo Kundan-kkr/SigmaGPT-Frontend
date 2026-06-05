@@ -420,7 +420,7 @@
 
   .info{
     font-size:11px;
-    margin-bottom: 75px;
+    margin-bottom: 55px;
     width:100%;
     text-align:center;
   }
@@ -435,7 +435,8 @@
   }
 
   .search-bar{
-    width: 90%;
+    width: 92%;
+    max-width: 500px;
     margin-bottom: 5px;
     margin-left: auto;
     margin-right: auto;
