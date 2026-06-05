@@ -248,5 +248,11 @@
     left:0;
   }
 
+  .developer-credit{
+    margin-bottom: 100px;
+     position: relative;
+    margin-top: 10px;
+  }
+
   
 }
