@@ -1,167 +1,369 @@
-.gptMessage {
-    min-width: 0;
-    max-width: 100%;
-    line-height: 1.75;
+
+/* Chat Layout */
+.chat-layout {
+    width: 100% !important;
+    max-width: 790px !important;
+    display: flex !important;
+    flex-direction: column !important;
+    box-sizing: border-box !important;
+}
+
+/* Heading Center Alignment */
+h1.new-chat-title {
+    text-align: center;
+    margin-top: 12vh;
+    font-size: 2.2rem;
+    font-weight: 600;
+    color: #ececec;
+    width: 100%;
+}
+
+/* Messages Box */
+.chats {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    margin-top: 40px;
+}
+
+/* User Message (Right Aligned Bubble) */
+.userDiv {
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+}
+
+.userMessage {
+    background-color: #2f2f2f;
+    padding: 12px 20px;
+    margin-right: 0;
+    border-radius: 24px;
+    font-size: 1rem;
+    max-width: 75%;
     overflow-wrap: anywhere;
 }
 
-.markdown-content > :first-child {
+/* GPT Message (Left Aligned - Full Width Stretch) */
+.gptDiv {
+    display: flex;
+    justify-content: flex-start;
+    width: 100%;
+}
+
+.gptMessage {
+    background: transparent;
+    padding: 12px 0;
+    font-size: 1rem;
+    width: 100%;
+    max-width: 100%;
+    line-height: 1.6;
+    overflow-wrap: break-word;
+    text-align: left;
+    min-width: 0;
+}
+
+/* ==============================
+   MARKDOWN HEADINGS
+================================ */
+
+.gptMessage h1,
+.gptMessage h2,
+.gptMessage h3,
+.gptMessage h4,
+.gptMessage h5,
+.gptMessage h6 {
+    color: #ececec;
+    font-weight: 600;
+    line-height: 1.35;
+    margin-top: 1.5em;
+    margin-bottom: 0.65em;
+}
+
+.gptMessage h1 {
+    font-size: 1.8rem;
+    padding-bottom: 0.35em;
+    border-bottom: 1px solid #30363d;
+}
+
+.gptMessage h2 {
+    font-size: 1.5rem;
+    padding-bottom: 0.3em;
+    border-bottom: 1px solid #30363d;
+}
+
+.gptMessage h3 {
+    font-size: 1.25rem;
+}
+
+.gptMessage h4 {
+    font-size: 1.1rem;
+}
+
+.gptMessage h1:first-child,
+.gptMessage h2:first-child,
+.gptMessage h3:first-child {
     margin-top: 0;
 }
 
-.markdown-content > :last-child {
+/* ==============================
+   PARAGRAPHS AND TEXT
+================================ */
+
+.gptMessage p {
+    margin: 0 0 1rem;
+}
+
+.gptMessage p:last-child {
     margin-bottom: 0;
 }
 
-.markdown-content p {
-    margin: 0 0 14px;
-}
-
-.markdown-content h1,
-.markdown-content h2,
-.markdown-content h3,
-.markdown-content h4 {
-    line-height: 1.35;
-    font-weight: 650;
-    margin: 24px 0 12px;
-    overflow-wrap: anywhere;
-}
-
-.markdown-content h1 {
-    font-size: 1.65rem;
-}
-
-.markdown-content h2 {
-    font-size: 1.35rem;
-}
-
-.markdown-content h3 {
-    font-size: 1.12rem;
-}
-
-.markdown-content ul,
-.markdown-content ol {
-    padding-left: 26px;
-    margin: 8px 0 18px;
-}
-
-.markdown-content li {
-    padding-left: 4px;
-    margin: 5px 0;
-}
-
-.markdown-content li > p {
-    margin-bottom: 6px;
-}
-
-.markdown-content strong {
+.gptMessage strong {
+    color: #f0f0f0;
     font-weight: 700;
 }
 
-.markdown-content blockquote {
-    margin: 16px 0;
-    padding: 4px 16px;
-    border-left: 3px solid #777;
-    opacity: 0.9;
-}
-
-.markdown-content a {
+.gptMessage a {
+    color: #79b8ff;
     text-decoration: underline;
-    text-underline-offset: 3px;
     overflow-wrap: anywhere;
 }
 
-.markdown-content hr {
-    border: none;
-    border-top: 1px solid #8885;
-    margin: 22px 0;
+.gptMessage a:hover {
+    color: #a5d0ff;
 }
 
-/* Tables */
-.table-wrapper {
-    width: 100%;
-    overflow-x: auto;
-    margin: 16px 0 22px;
-    border: 1px solid #8884;
-    border-radius: 10px;
+/* ==============================
+   LISTS
+================================ */
+
+.gptMessage ul,
+.gptMessage ol {
+    margin: 0.7rem 0 1.1rem;
+    padding-left: 1.8rem;
 }
 
-.markdown-content table {
+.gptMessage ul {
+    list-style-type: disc;
+}
+
+.gptMessage ol {
+    list-style-type: decimal;
+}
+
+.gptMessage li {
+    margin: 0.4rem 0;
+    padding-left: 0.2rem;
+}
+
+.gptMessage li > ul,
+.gptMessage li > ol {
+    margin-top: 0.35rem;
+    margin-bottom: 0.35rem;
+}
+
+.gptMessage li p {
+    margin-bottom: 0.4rem;
+}
+
+/* ==============================
+   TABLES
+================================ */
+
+.gptMessage table {
     width: 100%;
     border-collapse: collapse;
-    font-size: 0.94rem;
-    text-align: left;
+    margin: 1.2rem 0 1.5rem;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    display: block;
+    overflow-x: auto;
+    border: 1px solid #30363d;
+    border-radius: 8px;
 }
 
-.markdown-content th,
-.markdown-content td {
-    padding: 11px 14px;
-    border-bottom: 1px solid #8884;
+.gptMessage thead {
+    background-color: #252a31;
+}
+
+.gptMessage th,
+.gptMessage td {
+    padding: 12px 14px;
+    border: 1px solid #30363d;
+    text-align: left;
     vertical-align: top;
     min-width: 100px;
 }
 
-.markdown-content th {
-    font-weight: 700;
-    background: #8882;
+.gptMessage th {
+    color: #f0f0f0;
+    font-weight: 600;
+    white-space: normal;
 }
 
-.markdown-content tr:last-child td {
-    border-bottom: none;
+.gptMessage tbody tr:nth-child(even) {
+    background-color: #171b22;
 }
 
-/* Inline code and code blocks */
-.markdown-content :not(pre) > code {
-    font-size: 0.9em;
-    padding: 2px 6px;
+.gptMessage tbody tr:hover {
+    background-color: #222831;
+}
+
+/* ==============================
+   INLINE CODE
+================================ */
+
+.gptMessage :not(pre) > code {
+    background-color: #252a31;
+    color: #ffb86c;
+    padding: 0.15em 0.4em;
     border-radius: 5px;
-    background: #8882;
+    font-family: 'Fira Code', 'Courier New', monospace;
+    font-size: 0.88em;
     overflow-wrap: anywhere;
 }
 
-.markdown-content pre {
+/* ==============================
+   CODE BLOCKS
+================================ */
+
+.gptMessage pre {
+    background-color: #0d1117 !important;
+    padding: 16px !important;
+    border-radius: 8px !important;
+    overflow-x: auto !important;
+    margin: 12px 0 20px !important;
+    border: 1px solid #30363d !important;
     max-width: 100%;
-    overflow-x: auto;
-    border-radius: 10px;
-    padding: 16px;
-    margin: 14px 0 20px;
+    box-sizing: border-box;
     line-height: 1.55;
 }
 
-.markdown-content pre code {
-    font-size: 0.9rem;
+.gptMessage pre code {
+    font-family: 'Fira Code', 'Courier New', Courier, monospace !important;
+    font-size: 0.9rem !important;
+    background: transparent !important;
+    padding: 0 !important;
+    border-radius: 0 !important;
+    overflow-wrap: normal;
     white-space: pre;
 }
 
-.markdown-content img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 8px;
+/* ==============================
+   BLOCKQUOTES
+================================ */
+
+.gptMessage blockquote {
+    margin: 1rem 0;
+    padding: 0.2rem 1rem;
+    border-left: 4px solid #6e7681;
+    color: #c9d1d9;
+    background-color: #161b22;
+    border-radius: 0 6px 6px 0;
 }
 
-/* Math expressions */
-.markdown-content .katex-display {
+.gptMessage blockquote p {
+    margin: 0.4rem 0;
+}
+
+/* ==============================
+   HORIZONTAL LINE
+================================ */
+
+.gptMessage hr {
+    border: none;
+    border-top: 1px solid #30363d;
+    margin: 1.5rem 0;
+}
+
+/* ==============================
+   MATH EQUATIONS (KaTeX)
+================================ */
+
+.gptMessage .katex-display {
     max-width: 100%;
     overflow-x: auto;
     overflow-y: hidden;
-    padding: 8px 0;
+    padding: 0.5rem 0;
+    margin: 1rem 0;
 }
 
-@media (max-width: 600px) {
-    .markdown-content h1 {
-        font-size: 1.4rem;
+.gptMessage .katex {
+    font-size: 1.05em;
+}
+
+/* ==============================
+   MOBILE RESPONSIVE
+================================ */
+
+@media (max-width: 768px) {
+    .chat-layout {
+        max-width: 100% !important;
+        padding: 0 15px;
     }
 
-    .markdown-content h2 {
-        font-size: 1.2rem;
+    .chats {
+        gap: 24px;
+        margin-top: 20px;
     }
 
-    .markdown-content th,
-    .markdown-content td {
+    .userMessage {
+        max-width: 85%;
+        padding: 10px 16px;
+        font-size: 15px;
+        border-radius: 20px;
+    }
+
+    .gptMessage {
+        width: 100%;
+        max-width: 100%;
+        font-size: 15px;
+        line-height: 1.7;
+    }
+
+    h1.new-chat-title {
+        font-size: 1.8rem;
+        margin-top: 18vh;
+        padding: 0 12px;
+    }
+
+    .gptMessage h1 {
+        font-size: 1.55rem;
+    }
+
+    .gptMessage h2 {
+        font-size: 1.3rem;
+    }
+
+    .gptMessage h3 {
+        font-size: 1.15rem;
+    }
+
+    .gptMessage pre {
+        font-size: 13px;
+        padding: 12px !important;
+    }
+
+    .gptMessage pre code {
+        font-size: 0.82rem !important;
+    }
+
+    .gptMessage table {
+        font-size: 13px;
+    }
+
+    .gptMessage th,
+    .gptMessage td {
         padding: 9px 10px;
+        min-width: 90px;
     }
 
-    .markdown-content pre {
-        padding: 12px;
+    .gptMessage ul,
+    .gptMessage ol {
+        padding-left: 1.5rem;
+    }
+
+    .gptMessage .katex {
+        font-size: 0.95em;
     }
 }
